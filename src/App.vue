@@ -14,11 +14,6 @@
               <input type="checkbox" value="value-1" v-model="li.checked" @click="childCheck(index)">
               <span>{{li.name}}</span>
             </label>
-<!--            <label>-->
-<!--              <button @click="submenuShow">arrow</button>-->
-<!--              <input type="checkbox" v-model="li.checked" @click="childCheck(index)"/>-->
-<!--              <span>{{li.name}}</span>-->
-<!--            </label>-->
             <div class="sublist">
               <label v-for="item of li.sublist">
                 <input type="checkbox" v-model="item.checked" @change="parentInputDotted(index,item)"/>
@@ -153,9 +148,7 @@ export default {
     filteredSq(index) {
       if (this.list[index].filter === 'random') {
         return this.list[index]['sublist'].filter(t => t.checked === true);
-        //console.log(filtedAr);
       }
-      console.log(this.list[index].filter);
     },
     deleteItem(item) {
       item.count = item.count - 1;
